@@ -1,0 +1,198 @@
+{
+  "questions": [
+    {
+      "id": "gender",
+      "type": "multiSelect",
+      "question": "Select your gender:",
+      "options": [
+        { "value": "female", "label": "Female" },
+        { "value": "male", "label": "Male" }
+      ],
+      "next": "relationship-status"
+    },
+    {
+      "id": "relationship-status",
+      "type": "multiSelect",
+      "question": "Tell us about your relationship status:",
+      "options": [
+        { "value": "single", "label": "Single" },
+        { "value": "relationship", "label": "In a relationship" }
+      ],
+      "conditions": [
+        { "if": { "relationship-status": "single" }, "then": "single-parent" },
+        {
+          "if": { "relationship-status": "relationship" },
+          "then": "are-you-parent"
+        }
+      ]
+    },
+    {
+      "id": "single-parent",
+      "type": "multiSelect",
+      "question": "Are you a single parent?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "next": "relationship-description"
+    },
+    {
+      "id": "relationship-description",
+      "type": "multiSelect",
+      "question": "{gender} {parent_status} need a different approach to improve their relationship. Which statement best describes you?",
+      "options": [
+        {
+          "value": "very_unhappy",
+          "label": "I'm very unhappy with how things are going"
+        },
+        {
+          "value": "partially_unhappy",
+          "label": "Some things are working, some aren't"
+        },
+        {
+          "value": "generally_happy",
+          "label": "I'm generally happy with my relationship"
+        }
+      ],
+      "next": "overthink"
+    },
+    {
+      "id": "overthink",
+      "type": "multiSelect",
+      "question": "Do you tend to overthink?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "next": "transition"
+    },
+    {
+      "id": "transition",
+      "type": "multiSelect",
+      "question": "So how does it work?\nWe analyze hundreds of data points to create your unique astrological blueprint. This is combined with AI to tailor-make your astrological insights, based on your answers. We’re going to change your relationship with astrology.",
+      "options": [{ "value": "next", "label": "Next" }],
+      "conditions": [
+        { "if": { "overthink": "yes" }, "then": "most-important" },
+        { "if": { "overthink": "no" }, "then": "emotional-control" }
+      ]
+    },
+    {
+      "id": "most-important",
+      "type": "multiSelect",
+      "question": "What is most important to you?",
+      "options": [
+        { "value": "success", "label": "Success" },
+        { "value": "romance", "label": "Romance" },
+        { "value": "stability", "label": "Stability" },
+        { "value": "freedom", "label": "Freedom" }
+      ],
+      "next": "referral-source"
+    },
+    {
+      "id": "emotional-control",
+      "type": "multiSelect",
+      "question": "Is emotional control tricky for you?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "sometimes", "label": "Sometimes" },
+        { "value": "rarely", "label": "Rarely" },
+        { "value": "not_at_all", "label": "Not at all" }
+      ],
+      "next": "referral-source"
+    },
+    {
+      "id": "are-you-parent",
+      "type": "multiSelect",
+      "question": "Are you a parent?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "next": "relationship-details"
+    },
+    {
+      "id": "relationship-details",
+      "type": "multiSelect",
+      "question": "Single {gender} {parent_status} need a different approach. How did you feel in your last relationship?",
+      "options": [
+        { "value": "unhappy_low", "label": "I was unhappy" },
+        {
+          "value": "unhappy_some",
+          "label": "Some things were good, some were bad"
+        },
+        { "value": "happy", "label": "I was generally happy" },
+        { "value": "never", "label": "I've never been in a relationship" }
+      ],
+      "next": "partner-introvert-extrovert"
+    },
+    {
+      "id": "partner-introvert-extrovert",
+      "type": "multiSelect",
+      "question": "Is your partner an introvert or extrovert?",
+      "options": [
+        { "value": "introvert", "label": "Introvert" },
+        { "value": "extrovert", "label": "Extrovert" },
+        { "value": "both", "label": "A bit of both" }
+      ],
+      "next": "partner-gender"
+    },
+    {
+      "id": "partner-gender",
+      "type": "multiSelect",
+      "question": "What is your partner's gender?",
+      "options": [
+        { "value": "male", "label": "Male" },
+        { "value": "female", "label": "Female" }
+      ],
+      "next": "relationship-priority"
+    },
+    {
+      "id": "relationship-priority",
+      "type": "multiSelect",
+      "question": "Do you agree with this statement? 'My partner and I make sex a priority'",
+      "options": [
+        { "value": "strongly_agree", "label": "Strongly agree" },
+        { "value": "agree", "label": "Agree" },
+        { "value": "neutral", "label": "Neutral" },
+        { "value": "disagree", "label": "Disagree" },
+        { "value": "strongly_disagree", "label": "Strongly disagree" }
+      ],
+      "next": "relationship-goals"
+    },
+    {
+      "id": "relationship-goals",
+      "type": "multiSelect",
+      "question": "When you think about your relationship goals, you feel...",
+      "options": [
+        { "value": "optimistic", "label": "Optimistic" },
+        { "value": "cautious", "label": "Cautious" },
+        { "value": "anxious", "label": "Anxious" }
+      ],
+      "next": "referral-source"
+    },
+    {
+      "id": "referral-source",
+      "type": "multiSelect",
+      "question": "Where did you hear about us?",
+      "options": [
+        { "value": "poster", "label": "Poster or Billboard" },
+        { "value": "friend", "label": "Friend or Family" },
+        { "value": "instagram", "label": "Instagram" },
+        { "value": "direct_mail", "label": "Direct Mail or Package Insert" },
+        { "value": "online_tv", "label": "Online TV or Streaming TV" },
+        { "value": "tv", "label": "TV" },
+        { "value": "radio", "label": "Radio" },
+        { "value": "search", "label": "Search Engine (Google, Bing, etc.)" },
+        { "value": "print", "label": "Newspaper or Magazine" },
+        { "value": "facebook", "label": "Facebook" },
+        { "value": "blog", "label": "Blog Post or Website Review" },
+        { "value": "podcast", "label": "Podcast" },
+        { "value": "influencer", "label": "Influencer" },
+        { "value": "youtube", "label": "Youtube" },
+        { "value": "pinterest", "label": "Pinterest" },
+        { "value": "other", "label": "Other" }
+      ],
+      "next": "end"
+    }
+  ]
+}
