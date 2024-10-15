@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useAppDispatch, useAppSelector } from "../../../store/store";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAppDispatch, useAppSelector } from '../../../store/store';
 import {
   initializeQuestionnaire,
   saveAnswer,
   setCurrentQuestionId,
-} from "../../../store/questionnaireSlice";
-import { componentsMap } from "@/components/questions/";
-import { getNextQuestionId, replacePlaceholders } from "@/lib";
-import { Question } from "@/app/types";
+} from '../../../store/questionnaireSlice';
+import { componentsMap } from '@/components/questions/';
+import { getNextQuestionId, replacePlaceholders } from '@/lib';
+import { Question } from '@/app/types';
 
 interface QuestionProps {
   question: Question;
@@ -37,8 +37,8 @@ export const QuestionComponent: React.FC<QuestionProps> = ({ question }) => {
 
     const nextQuestionId = getNextQuestionId(question, answers, latestAnswer);
 
-    if (nextQuestionId === "end") {
-      router.push("/summary");
+    if (nextQuestionId === 'end') {
+      router.push('/summary');
       return;
     }
 
@@ -65,7 +65,7 @@ export const QuestionComponent: React.FC<QuestionProps> = ({ question }) => {
   );
 
   return (
-    <div className='flex flex-col items-center space-y-6 container mx-auto px-4 max-w-sm'>
+    <div className="flex flex-col items-center space-y-6 container mx-auto px-4 max-w-sm">
       <QuestionComponent
         question={questionText}
         options={question.options || []}

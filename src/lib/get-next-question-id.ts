@@ -1,4 +1,4 @@
-import { Question } from "../app/types";
+import { Question } from '../app/types';
 
 interface AnswersState {
   [questionId: string]: string;
@@ -9,7 +9,7 @@ export const getNextQuestionId = (
   answers: AnswersState,
   latestAnswer?: { questionId: string; answer: string }
 ): string | undefined => {
-  if (currentQuestion.next && currentQuestion.next === "end") return "end";
+  if (currentQuestion.next && currentQuestion.next === 'end') return 'end';
 
   // Merge the latest answer with existing answers
   const combinedAnswers = {
@@ -42,6 +42,6 @@ export const getNextQuestionId = (
     return currentQuestion.next;
   }
 
-  console.warn("No valid next question found");
+  console.warn('No valid next question found');
   return undefined;
 };

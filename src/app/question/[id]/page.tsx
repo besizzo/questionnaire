@@ -1,14 +1,14 @@
-import questionnaireData from "../../../../public/questionnaire.json";
-import { QuestionComponent } from "./QuestionComponent";
-import { Question } from "@/app/types";
-import { QuestionnaireSchema } from "@/config";
+import questionnaireData from '../../../../public/questionnaire.json';
+import { QuestionComponent } from './QuestionComponent';
+import { Question } from '@/app/types';
+import { QuestionnaireSchema } from '@/config';
 
 let questionnaire: Question[] = [];
 
 try {
   questionnaire = QuestionnaireSchema.parse(questionnaireData).questions;
 } catch (error) {
-  console.error("Failed to load questionnaire:", error);
+  console.error('Failed to load questionnaire:', error);
 }
 const getQuestionById = (id: string): Question | undefined => {
   return questionnaire.find((q: Question) => q.id === id);

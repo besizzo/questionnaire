@@ -1,4 +1,4 @@
-import { placeholdersConfig, placeholderToQuestionId } from "@/config";
+import { placeholdersConfig, placeholderToQuestionId } from '@/config';
 
 type AnswersState = {
   [questionId: string]: string;

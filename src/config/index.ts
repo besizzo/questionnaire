@@ -1,6 +1,6 @@
 export {
   placeholdersConfig,
   placeholderToQuestionId,
-} from "./placeholders-config";
+} from './placeholders-config';
 
-export { QuestionnaireSchema } from "./questionnaireSchema";
+export { QuestionnaireSchema } from './questionnaireSchema';

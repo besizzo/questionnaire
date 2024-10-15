@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface QuestionnaireState {
   currentQuestionId: string | null;
@@ -13,14 +13,14 @@ const initialState: QuestionnaireState = {
 };
 
 const questionnaireSlice = createSlice({
-  name: "questionnaire",
+  name: 'questionnaire',
   initialState,
   reducers: {
     initializeQuestionnaire: (state, action: PayloadAction<string>) => {
       state.currentQuestionId = action.payload;
     },
     setCurrentQuestionId: (state, action: PayloadAction<string | null>) => {
-      console.log("action", action);
+      console.log('action', action);
       const newQuestionId = action.payload;
 
       if (state.currentQuestionId) {

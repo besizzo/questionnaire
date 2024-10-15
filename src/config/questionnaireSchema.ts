@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 const OptionSchema = z.object({
   value: z.string(),
@@ -22,7 +22,7 @@ const QuestionSchema = z
   })
   .refine((data) => data.next || data.conditions, {
     message: "Either 'next' or 'conditions' must be provided",
-    path: ["next", "conditions"],
+    path: ['next', 'conditions'],
   });
 
 export const QuestionnaireSchema = z.object({

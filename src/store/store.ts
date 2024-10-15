@@ -1,6 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
-import questionnaireReducer from "./questionnaireSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
+import questionnaireReducer from './questionnaireSlice';
 
 export const store = configureStore({
   reducer: {

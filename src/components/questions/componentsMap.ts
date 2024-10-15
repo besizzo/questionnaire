@@ -1,4 +1,4 @@
-import { MultiSelect } from "./MultiSelect";
+import { MultiSelect } from './MultiSelect';
 
 export const componentsMap = {
   multiSelect: MultiSelect,
